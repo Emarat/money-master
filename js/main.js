@@ -1,6 +1,13 @@
 // geting user input using function 
 function userInput(ID) {
     const userValue = parseFloat(document.getElementById(ID).value);
+    // error validation
+    if (isNaN(userValue)) {
+        alert('Not a Number! Please Enter Number Value & Try Again');
+    } else if (userValue < 0) {
+        alert('Please Enter Positive Number Value & Try Again');
+    }
+
     return userValue;
 };
 
@@ -19,12 +26,6 @@ document.getElementById('calc').addEventListener('click', function () {
     const rentValue = userInput('rent');
     const clothsValue = userInput('cloths');
 
-    // const incomeValue = parseFloat(document.getElementById('income').value);
-    // const foodValue = parseFloat(document.getElementById('food').value);
-    // const rentValue = parseFloat(document.getElementById('rent').value);
-    // const clothsValue = parseFloat(document.getElementById('cloths').value);
-    // let expenses = document.getElementById('expenses');
-    // let balance = document.getElementById('balance');
 
     const expenses = expensesBalance('expenses');
     const balance = expensesBalance('balance');
@@ -35,8 +36,14 @@ document.getElementById('calc').addEventListener('click', function () {
 
 
     // remainingBalance calculation 
-    const remainingBalance = incomeValue - totalExpenses;
-    balance.innerText = remainingBalance;
+    if (totalExpenses > incomeValue) {
+        alert('You  Have InSufficient Balance');
+
+    }
+    else {
+        const remainingBalance = incomeValue - totalExpenses;
+        balance.innerText = remainingBalance;
+    }
 
 });
 
@@ -46,20 +53,26 @@ document.getElementById('save').addEventListener('click', function () {
     const savingPercent = document.getElementById('saving-value').value;
     const savingAmount = document.getElementById('saving-amount');
 
-
     const incomeValue = userInput('income');
-
 
     const savings = (savingPercent / 100) * incomeValue;
     savingAmount.innerText = savings;
-    // console.log(savings);
+
     const exsistingMoney = document.getElementById('balance').innerText;
     let exsistingBalance = document.getElementById('remaining-balance');
 
 
 
-    let exsisitingBalanceAmount = exsistingMoney - savings;
-    exsistingBalance.innerText = exsisitingBalanceAmount;
+    if (savings > exsistingMoney) {
+
+        alert('You Do Not Have Sufficient Balance');
+
+    }
+    else {
+        let exsisitingBalanceAmount = exsistingMoney - savings;
+        exsistingBalance.innerText = exsisitingBalanceAmount;
+
+    }
 
 });
 
