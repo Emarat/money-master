@@ -23,32 +23,35 @@
                 <!-- income form  -->
                 <div class="text-center">
                     <h3 class="font-semibold py-3">Income</h3>
-                    <h3>Income: <input class="border border-slate-300 w-40" type="text" name="" id="">
+                    <h3>Income: <input id="income" class="border border-slate-300 w-40" type="text" name="" id="">
                     </h3>
                 </div>
                 <!-- expenses form  -->
 
                 <div class="text-center">
                     <h3 class="font-semibold  py-2">Expenses</h3>
-                    <h3 class="py-2">Food: <input class="border border-slate-300 w-40" type="text" name="" id="">
+                    <h3 class="py-2">Food: <input id="food" class="border border-slate-300 w-40" type="text" name=""
+                            id="">
                     </h3>
-                    <h3 class="py-2">Rent: <input class="border border-slate-300 w-40" type="text" name="" id="">
+                    <h3 class="py-2">Rent: <input id="rent" class="border border-slate-300 w-40" type="text" name=""
+                            id="">
                     </h3>
-                    <h3 class="py-2">Cloths: <input class="border border-slate-300 w-40" type="text" name="" id="">
+                    <h3 class="py-2">Cloths: <input id="cloths" class="border border-slate-300 w-40" type="text" name=""
+                            id="">
                     </h3>
-                    <button
+                    <button id="calc"
                         class="p-1 border border-slate-300 rounded bg-sky-500/100 items-center text-white">Calculate</button>
                 </div>
                 <!-- total expenses, balance, savings  -->
                 <div class="text-center">
-                    <h3 class="font-semibold  py-3">Total Expenses : </h3>
-                    <h3 class="font-semibold  py-1">Balance : </h3>
+                    <h3 class="font-semibold  py-3">Total Expenses : <span id="expenses"> 0 </span> </h3>
+                    <h3 class="font-semibold  py-1">Balance : <span id="balance"> 0 </span> </h3>
                     <h3 class="py-2">Save: <input class="border border-slate-300 w-10" type="text" name="" id=""> %
                         <button
                             class="p-1 border border-slate-300 rounded bg-sky-500/100 items-center text-white">Save</button>
                     </h3>
-                    <h3 class="font-semibold py-2">Saving Amount : </h3>
-                    <h3 class="font-semibold ">Remaining Balance : </h3>
+                    <h3 class="font-semibold py-2">Saving Amount : <span id="saving-amount"> 0 </span> </h3>
+                    <h3 class="font-semibold ">Remaining Balance : <span id="remaining-balance"> 0 </span></h3>
                 </div>
 
             </div>
@@ -56,6 +59,7 @@
         </div>
     </main>
     <!-- tailwindcss cdn  -->
+    <script src="js/main.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </body>
 
